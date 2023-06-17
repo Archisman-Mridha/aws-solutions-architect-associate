@@ -66,6 +66,7 @@ We can do 2 types of replications - Cross Region Replication (CRR) and Same Regi
 - After replication is enabled, only new objects are replicated. We can replicate existing S3 objects using Batch Replication.
 - We can enable or disable replication of delete markers. (Permanent deletions using version id cannot be replicated).
 - Replication by default is enabled for all the objects in the source S3 bucket, but we can use some filters and enable replication for specific objects in that bucket.
+- Bucket replication cannot be chained.
 </aside>
 
 ## S3 Storage Classes
