@@ -31,9 +31,18 @@ module "vpc" {
   availability_zones = var.availability_zones
 }
 
-// Creates an RDS instance with a RDS proxy.
-module "rds" {
+// Creates an RDS instance with a RDS proxy (running PostgreSQL engine).
+/* module "rds" {
   source = "./rds"
+
+  vpc_id = module.vpc.vpc_id
+  availability_zones = var.availability_zones
+  private_subnet_ids = module.vpc.private_subnet_ids
+} */
+
+// Creates an ElastiCache cluster (running Redis engine).
+module "elasticache" {
+  source = "./elasticache"
 
   vpc_id = module.vpc.vpc_id
   availability_zones = var.availability_zones
